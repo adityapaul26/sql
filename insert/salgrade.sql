@@ -1,0 +1,17 @@
+INSERT INTO salgrade 
+VALUES (700,1200,1);
+
+INSERT INTO salgrade 
+VALUES (1201,1400,2);
+
+INSERT INTO salgrade 
+VALUES (1401,2000,3);
+
+INSERT INTO salgrade 
+VALUES (2001,3000,4);
+
+INSERT INTO salgrade 
+VALUES (3001,9999,5);
+
+
+
