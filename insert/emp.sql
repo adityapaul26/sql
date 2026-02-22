@@ -31,7 +31,7 @@ INSERT INTO emp (empno, ename, job, hiredate, sal, comm, deptno)
 VALUES (7839, 'KING', 'PRESIDENT', DATE '1981-11-17', 5000, NULL, 10);
 
 INSERT INTO emp (empno, ename, job, hiredate, sal, comm, deptno)
-VALUES (7844, 'TURNER', 'SALESMAN', DATE '1981-09-08', 1500, 0, 30);
+VALUES (7844, 'TURNER', 'SALESMAN', DATE '1981-09-08', 1500, NULL, 30);
 
 INSERT INTO emp (empno, ename, job, hiredate, sal, comm, deptno)
 VALUES (7876, 'ADAMS', 'CLERK', DATE '1987-07-13', 1100, NULL, 20);
