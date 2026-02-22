@@ -45,3 +45,20 @@ VALUES (7902, 'FORD', 'ANALYST', DATE '1981-12-03', 3000, NULL, 20);
 INSERT INTO emp (empno, ename, job, hiredate, sal, comm, deptno)
 VALUES (7934, 'MILLER', 'CLERK', DATE '1982-01-23', 1300, NULL, 10);
 
+
+
+-- now update MGRNO values
+UPDATE emp SET mgrno = 7902 WHERE empno = 7369;
+UPDATE emp SET mgrno = 7698 WHERE empno = 7499;
+UPDATE emp SET mgrno = 7698 WHERE empno = 7521;
+UPDATE emp SET mgrno = 7839 WHERE empno = 7566;
+UPDATE emp SET mgrno = 7698 WHERE empno = 7654;
+UPDATE emp SET mgrno = 7839 WHERE empno = 7698;
+UPDATE emp SET mgrno = 7839 WHERE empno = 7782;
+UPDATE emp SET mgrno = 7566 WHERE empno = 7788;
+UPDATE emp SET mgrno = NULL WHERE empno = 7839;
+UPDATE emp SET mgrno = 7698 WHERE empno = 7844;
+UPDATE emp SET mgrno = 7788 WHERE empno = 7876;
+UPDATE emp SET mgrno = 7698 WHERE empno = 7900;
+UPDATE emp SET mgrno = 7566 WHERE empno = 7902;
+UPDATE emp SET mgrno = 7782 WHERE empno = 7934;
