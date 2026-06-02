@@ -20,7 +20,12 @@ select ename,sal,comm
 select ename,sal
     from emp
     where sal BETWEEN 1000 AND 2000;
-
+-- or
+SELECT ename, sal
+FROM emp
+WHERE sal >= 1000
+  AND sal <= 2000;
+  
 -- 5. Select employee details for those reporting to managers 7902, 7566, or 7788
 select ename,empno,mgrno
     from emp
@@ -79,12 +84,16 @@ OR
 sal BETWEEN 1000 and 2000;
 
 -- 16. display empno, job, deptno, of all emp who are managers earn salary over 5000 or a salesman
-SELECT empno, job, deptno FROM emp
-WHERE
-sal > 5000 AND job = 'SALESMAN'
-OR
-job = 'MANAGER';
-
+SELECT empno, job, deptno
+FROM emp
+WHERE (job = 'MANAGER' AND sal > 5000)
+   OR job = 'SALESMAN';
+-- or
+SELECT empno, job, deptno
+FROM emp
+WHERE job = 'MANAGER' AND sal > 5000
+   OR job = 'SALESMAN';
+   
 -- 17. select all the managers and salesman with salary over 5000 and display empno, ename, job, sal, deptno
 SELECT ename, empno, job, sal, deptno FROM emp
 WHERE
@@ -99,7 +108,7 @@ ORDER BY dname;
 -- 19. display all different jobs
 SELECT DISTINCT job FROM emp;
 
--- 20. ditails of all emp in deptno 10 and 20 in alphabetical order of name.
+-- 20. details of all emp in deptno 10 and 20 in alphabetical order of name.
 SELECT * FROM emp
 WHERE deptno IN (10, 20)
 ORDER BY ename;
@@ -116,16 +125,16 @@ ename LIKE '%TH%'
 OR
 ename LIKE '%LL%';
 
--- 23. dispaly name and remunation of all the employee
-SELECT ename, sal * 12 + NVL(comm, 0) remunation FROM emp;
+-- 23. dispaly name and remuneration of all the employee
+SELECT ename, sal * 12 + NVL(comm, 0) remuneration FROM emp;
 
 -- 24. dispaly name and remunation and hirdate of all the employee who are employeed on year of 03
-SELECT ename, sal * 12 + NVL(comm, 0) remu, hiredate FROM emp
+SELECT ename, sal * 12 + NVL(comm, 0) AS remu, hiredate FROM emp
 WHERE
 hiredate LIKE '%03';
 
 -- 25. display name annual salary where salary is greater than commission and sort on salary
 -- highest first, if two or more same salary then sort by ename within the highest salary order.
-SELECT ename, sal * 12 + NVL(comm, 0) remunation FROM emp
+SELECT ename, sal * 12 + NVL(comm, 0) remuneration FROM emp
 WHERE sal > comm 
 ORDER BY sal DESC , ename;
