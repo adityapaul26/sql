@@ -1,6 +1,6 @@
-Create table salgrade(
+CREATE TABLE salgrade(
 	LOSAL NUMBER(5),
 	HISAL NUMBER(5),
 	GRADE NUMBER(2));
 
-desc salgrade;
+DESC salgrade;

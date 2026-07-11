@@ -60,10 +60,10 @@ WHERE e.sal BETWEEN d.losal AND d.hisal
   AND e.job != 'CLERK';
 
 -- 8. Retrieves the department number, employee name, and department name for departments 30 and 40, including departments with no employees using an outer join.
-select d.deptno, ename, d.dname
-	from emp,dept d
-	where emp.deptno(+) = d.deptno
-	and d.deptno in (30,40);
+SELECT d.deptno, ename, d.dname
+	FROM emp,dept d
+	WHERE emp.deptno(+) = d.deptno
+	AND d.deptno IN (30,40);
 
 -- 9. A self-join query that retrieves the names and salaries of employees who earn strictly less than their respective managers.
 SELECT e.ename AS emp_name,

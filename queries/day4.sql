@@ -34,7 +34,7 @@ WHERE deptno = 10;
 -- 6. Exponential Constant
 -- Uses the EXP function to calculate the mathematical constant e raised to the power of 4.
 SELECT EXP(4) 
-FROM dual;
+FROM DUAL;
 
 -- 7. Square Root
 -- Uses the SQRT function to find the square root of a column's values and a literal number.
@@ -55,7 +55,7 @@ FROM emp;
 
 -- 10. Dual Table Query
 -- Selects all columns from dual, which is a special dummy table in Oracle used for evaluating standalone expressions.
-SELECT * FROM dual;
+SELECT * FROM DUAL;
 
 -- 11. Modulo (Remainder)
 -- Applies the MOD function to find the remainder left over after a division operation.
