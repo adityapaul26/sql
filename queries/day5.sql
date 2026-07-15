@@ -1,11 +1,7 @@
--- TOPICS: Joins (Equi-joins, Non-equi-joins, Self-joins, Outer Joins), 
+-- TOPICS: Joins (Equi-joins, Non-equi-joins, Self-joins, Outer Joins),
 -- Set Operators (UNION, UNION ALL, INTERSECT, MINUS).
-
--- 1. Retrieves the department number, job title, and department name by joining the employee (emp) and department (dept) tables.
-SELECT e.deptno,
-       e.job,
-       d.dname
-FROM emp e,
+-- 1. Retrieves the department number, job title, and department name by joining the employee (emp) and department (dept) tables. SELECT e.deptno, e.job,
+       d.dname FROM emp e,
      dept d
 WHERE e.deptno = d.deptno;
 
@@ -64,6 +60,25 @@ SELECT d.deptno, ename, d.dname
 	FROM emp,dept d
 	WHERE emp.deptno(+) = d.deptno
 	AND d.deptno IN (30,40);
+
+-- 8.1 Write a query to list the names of employees and the names of their managers
+-- Left side: Get all employees, including those with no manager
+SELECT e.ename AS employee_name, m.ename AS manager_name
+FROM emp e, emp m
+WHERE e.mgrno = m.empno(+)
+
+UNION
+
+-- Right side: Get all managers, including those who manage nobody
+SELECT e.ename AS employee_name, m.ename AS manager_name
+FROM emp e, emp m
+WHERE e.mgrno(+) = m.empno;
+
+-- 8.2 Write a query to display the employee name, job, and department name for all employees. Ensure that if there is an employee who is not assigned to any department (which would mean their deptno is not present in the dept table or is NULL), their name and job are still displayed in the result set with a blank department name
+SELECT e.ename, e.job, d.dname
+FROM emp e, dept d
+WHERE e.deptno = d.deptno(+)
+ORDER BY e.ename;
 
 -- 9. A self-join query that retrieves the names and salaries of employees who earn strictly less than their respective managers.
 SELECT e.ename AS emp_name,
